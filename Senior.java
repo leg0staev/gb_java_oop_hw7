@@ -18,5 +18,19 @@ public class Senior implements Observer {
             System.out.printf("Сеньор %s >>> Я найду работу получше! [%s - %f]\n", name, companyName, salary);
         }
     }
+
+        @Override
+        public void receiveVacancy(Job vacancy) {
+            if (this.salary < vacancy.getSalary()) {
+                System.out.printf("Сеньор %s >>> Мне нужна эта работа! [%s - %s - %f]\n", name, vacancy.getPosition(),
+                        vacancy.getNameCompany(),
+                        vacancy.getSalary());
+                this.salary = vacancy.getSalary();
+            } else {
+                System.out.printf("Сеньор %s >>> Я найду работу получше! [%s - %s - %f]\n", name, vacancy.getPosition(),
+                        vacancy.getNameCompany(),
+                        vacancy.getSalary());
+            }
+        }
     
 }

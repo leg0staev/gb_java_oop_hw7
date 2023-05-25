@@ -4,6 +4,10 @@ public interface Publisher {
 
     void removeObserver(Observer observer);
 
+    void addVacancy(Job vacancy);
+
+    void notifyObservers();
+
     void sendOffer(String nameCompany, double salary);
 
 }
